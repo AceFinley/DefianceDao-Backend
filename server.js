@@ -8,6 +8,8 @@ const router = require('./route/root.js');
 const app = express();
 const cors = require('cors');
 
+require('dotenv').config();
+
 const PORT = process.env.PORT || 5000;
 
 app.use((req,res,next)=>
@@ -39,7 +41,7 @@ app.use(
     })
 )
 
-mongoose.connect(DB.DBuri)
+mongoose.connect(process.env.DB_URI)
 .then(res => {
     console.log('Successfully connected to MongoDB!');
 })
