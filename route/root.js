@@ -9,7 +9,7 @@ var moment = require('moment');
 console.log('Request accepted');
 
 router.get('/', function (req, res) {
-    res.send('hello world');
+    res.send('hello world!!!');
 });
 
 router.post('/addUser', function (req, res) {

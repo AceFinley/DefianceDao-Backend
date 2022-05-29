@@ -7,6 +7,9 @@ const DB = require('./config/db');
 const router = require('./route/root.js');
 const app = express();
 const cors = require('cors');
+
+const PORT = process.env.PORT || 5000;
+
 app.use((req,res,next)=>
 {
     next();
@@ -44,4 +47,4 @@ mongoose.connect(DB.DBuri)
     console.log(err);
 });
 
-app.listen(80, () => console.log('Example app listening on port 80!'));
+app.listen(PORT, () => console.log('Example app listening on port 80!'));
